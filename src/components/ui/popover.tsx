@@ -1,11 +1,11 @@
 /**
- * @file popover.tsx
- * @description shadcn/ui 팝오버 컴포넌트
+ * 📁 @file popover.tsx
+ * 💭 @description shadcn/ui 팝오버 컴포넌트
  *
- * 트리거 요소 주변에 떠있는 콘텐츠를 표시하는 컴포넌트입니다.
- * Radix UI Popover를 기반으로 구현되었습니다.
+ * 🎈 트리거 요소 주변에 떠있는 콘텐츠를 표시하는 컴포넌트입니다.
+ * 🧩 Radix UI Popover를 기반으로 구현되었습니다.
  *
- * @see https://ui.shadcn.com/docs/components/popover
+ * 🔗 @see https://ui.shadcn.com/docs/components/popover
  */
 
 import * as React from "react"

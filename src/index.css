@@ -1,9 +1,9 @@
 /**
- * @file index.css
- * @description 전역 스타일 및 Tailwind CSS 설정
+ * 📁 @file index.css
+ * 🎨 @description 전역 스타일 및 Tailwind CSS 설정
  *
- * Tailwind CSS와 애니메이션 라이브러리를 가져오고,
- * 라이트/다크 테마에 대한 CSS 변수를 정의합니다.
+ * 🌬️ Tailwind CSS와 애니메이션 라이브러리를 가져오고,
+ * ☀️🌙 라이트/다크 테마에 대한 CSS 변수를 정의합니다.
  */
 
 @import "tailwindcss";

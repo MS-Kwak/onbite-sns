@@ -1,11 +1,11 @@
 /**
- * @file dialog.tsx
- * @description shadcn/ui 다이얼로그 컴포넌트
+ * 📁 @file dialog.tsx
+ * 💬 @description shadcn/ui 다이얼로그 컴포넌트
  *
- * 일반적인 모달 다이얼로그 컴포넌트입니다.
- * Radix UI Dialog를 기반으로 구현되었습니다.
+ * 🪟 일반적인 모달 다이얼로그 컴포넌트입니다.
+ * 🧩 Radix UI Dialog를 기반으로 구현되었습니다.
  *
- * @see https://ui.shadcn.com/docs/components/dialog
+ * 🔗 @see https://ui.shadcn.com/docs/components/dialog
  */
 
 import * as React from "react"

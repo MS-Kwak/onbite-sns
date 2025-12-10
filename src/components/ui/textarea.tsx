@@ -1,11 +1,11 @@
 /**
- * @file textarea.tsx
- * @description shadcn/ui 텍스트영역 컴포넌트
+ * 📁 @file textarea.tsx
+ * 📝 @description shadcn/ui 텍스트영역 컴포넌트
  *
- * 여러 줄 텍스트 입력을 위한 컴포넌트입니다.
- * 자동 높이 조절(field-sizing-content)을 지원합니다.
+ * 📄 여러 줄 텍스트 입력을 위한 컴포넌트입니다.
+ * 📏 자동 높이 조절(field-sizing-content)을 지원합니다.
  *
- * @see https://ui.shadcn.com/docs/components/textarea
+ * 🔗 @see https://ui.shadcn.com/docs/components/textarea
  */
 
 import * as React from "react"
