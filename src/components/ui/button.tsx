@@ -1,3 +1,13 @@
+/**
+ * @file button.tsx
+ * @description shadcn/ui 버튼 컴포넌트
+ *
+ * 다양한 variant(스타일)와 size를 지원하는 재사용 가능한 버튼 컴포넌트입니다.
+ * class-variance-authority(cva)를 사용하여 조건부 스타일링을 구현합니다.
+ *
+ * @see https://ui.shadcn.com/docs/components/button
+ */
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"

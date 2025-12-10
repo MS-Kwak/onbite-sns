@@ -1,3 +1,13 @@
+/**
+ * @file carousel.tsx
+ * @description shadcn/ui 캐러셀(슬라이더) 컴포넌트
+ *
+ * 이미지나 콘텐츠를 슬라이드 형태로 보여주는 컴포넌트입니다.
+ * Embla Carousel을 기반으로 구현되었습니다.
+ *
+ * @see https://ui.shadcn.com/docs/components/carousel
+ */
+
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,

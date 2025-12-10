@@ -1,3 +1,12 @@
+/**
+ * @file input.tsx
+ * @description shadcn/ui 입력 필드 컴포넌트
+ *
+ * 기본 HTML input 요소를 래핑하여 일관된 스타일과 접근성을 제공합니다.
+ *
+ * @see https://ui.shadcn.com/docs/components/input
+ */
+
 import * as React from "react"
 
 import { cn } from "@/lib/utils"

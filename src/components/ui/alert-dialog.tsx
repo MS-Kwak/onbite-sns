@@ -1,3 +1,13 @@
+/**
+ * @file alert-dialog.tsx
+ * @description shadcn/ui 알림 다이얼로그 컴포넌트
+ *
+ * 사용자의 확인이 필요한 중요한 작업에 사용되는 모달 다이얼로그입니다.
+ * Radix UI Alert Dialog를 기반으로 구현되었습니다.
+ *
+ * @see https://ui.shadcn.com/docs/components/alert-dialog
+ */
+
 import * as React from "react"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 
