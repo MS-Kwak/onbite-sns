@@ -11,7 +11,6 @@ export function useCreateTodoMutation() {
     onMutate: () => {},
     onSettled: () => {},
     onSuccess: (newTodo) => {
-      // 캐시 데이터의 리페치 없이 직접 데이터를 업데이트 합니다.
       queryClient.setQueryData<Todo[]>(QUERY_KEYS.todo.list, (prevTodos) => {
         if (!prevTodos) return [newTodo];
         return [...prevTodos, newTodo];
