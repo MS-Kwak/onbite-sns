@@ -2,7 +2,7 @@
  * 📁 @file use-delete-todo-mutation.ts
  * 🗑️ @description 할 일 삭제를 위한 React Query mutation 훅
  *
- * 🔄 서버에서 할 일을 삭제하고, 성공 시 캐시에서 해당 항목을 제거합니다.
+ * 🔄 서버에서 할 일을 삭제하고, 성공 시 캐시를 정규화 패턴에 맞게 업데이트합니다.
  */
 
 import { deleteTodo } from "@/api/delete-todo";
@@ -14,13 +14,13 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
  * 🗑️ 할 일 삭제 mutation 훅
  *
  * deleteTodo API를 호출하여 할 일을 삭제하고,
- * ✅ 성공 시 캐시에서 해당 항목을 제거합니다.
+ * 🗂️ 캐시 정규화 패턴에 맞게 캐시를 업데이트합니다.
+ *
+ * ✅ 성공 시 캐시 업데이트:
+ * - 🗑️ 개별 상세 캐시 제거 (removeQueries)
+ * - 🆔 목록 캐시에서 삭제된 ID 제거
  *
  * @returns 🎁 useMutation 결과 객체
- * @returns mutate - 📤 할 일 삭제 함수 (id: string)
- * @returns isPending - ⏳ 삭제 중 여부
- * @returns isError - ❌ 에러 발생 여부
- * @returns error - 🚨 에러 객체
  *
  * @example
  * const { mutate, isPending } = useDeleteTodoMutation();
@@ -35,16 +35,24 @@ export function useDeleteTodoMutation() {
     mutationFn: deleteTodo,
 
     /**
-     * ✅ 삭제 성공 시 캐시에서 해당 항목 제거
-     * 🔍 삭제된 할 일의 ID와 일치하지 않는 항목만 필터링하여 캐시 업데이트
+     * ✅ 삭제 성공 시 캐시 업데이트 (정규화 패턴)
      */
     onSuccess: (deletedTodo) => {
-      queryClient.setQueryData<Todo[]>(QUERY_KEYS.todo.list, (prevTodos) => {
-        // 📭 기존 데이터가 없으면 빈 배열 반환
-        if (!prevTodos) return [];
-        // 🔄 삭제된 할 일을 제외한 나머지 항목만 반환
-        return prevTodos.filter((prevTodo) => prevTodo.id !== deletedTodo.id);
+      // 🗑️ 개별 상세 캐시 제거
+      queryClient.removeQueries({
+        queryKey: QUERY_KEYS.todo.detail(deletedTodo.id),
       });
+
+      // 🆔 목록 캐시에서 삭제된 ID 제거
+      queryClient.setQueryData<string[]>(
+        QUERY_KEYS.todo.list,
+        (prevTodoIds) => {
+          // 📭 기존 데이터가 없으면 빈 배열 반환
+          if (!prevTodoIds) return [];
+          // 🔍 삭제된 ID를 제외한 나머지만 반환
+          return prevTodoIds.filter((id) => id !== deletedTodo.id);
+        },
+      );
     },
   });
 }
